@@ -3,6 +3,8 @@ package com.example.BackendFridgigo;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.stereotype.Repository;
+
 @Entity
 public class Zutat {
 
@@ -29,8 +31,8 @@ public class Zutat {
         return Link;
     }
 
-    public void setLink(String link) {
-        Link = link;
+    public void setLink(String Link) {
+        this.Link = Link;
     }
 
 

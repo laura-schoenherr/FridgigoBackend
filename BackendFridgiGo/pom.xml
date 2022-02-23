@@ -9,14 +9,15 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>BackendPlanti</artifactId>
+	<artifactId>BackendFrigiGo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BackendPlanti</name>
-	<description>Backend für unsere App Planti</description>
+	<name>BackendFridgiGo</name>
+	<description>Backend für FridgiGoApp</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -63,6 +64,9 @@
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-jsr310</artifactId>
 		</dependency>
+
+		
+
 
 
 

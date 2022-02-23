@@ -22,7 +22,7 @@ public class BackendFridgiGoApplication {
 
     //Gibt eine einzelne Rezept nach ihrer ID zurück
     @GetMapping("/FridgiGo/show")
-    @CrossOrigin(origins = "http://localhost:8100")
+    @CrossOrigin(origins = "http://localhost:8081")
     public String viewRezept(@RequestParam(value = "id", defaultValue = "1") Integer id) {
         Rezept2 rezept = DB.callRezeptById(id);
         return Miscellaneous.MapObject(rezept);
@@ -30,7 +30,7 @@ public class BackendFridgiGoApplication {
 
     //Gibt eine Liste aller auf der Datenbank befindlichen Rezepte zurück, quasi ein "Dump"
     @GetMapping(value = "/FridgiGo/showall", produces = "application/json")
-    @CrossOrigin(origins = "http://localhost:8100")
+    @CrossOrigin(origins = "http://localhost:8081")
     public String viewAllRezepte() {
         ArrayList<Rezept2> rezepteList = DB.callAllRezepte();
         return Miscellaneous.MapObjectList(rezepteList);
@@ -39,12 +39,13 @@ public class BackendFridgiGoApplication {
     //Persistiert ein Rezept-Objekt mit den eingegebenen Daten; Gibt nur "200" zurück
     @GetMapping("/FridgiGo/addrezept")
     @CrossOrigin(origins = "http://localhost:8100")
-    public void addSensor(@RequestParam(value = "rezeptid") Integer rezeptid,
-                          @RequestParam(value = "link") String link) {
+    public void addrezept(@RequestParam(value = "rezeptid") Integer rezeptid,
+                          @RequestParam(value = "beschreibung") String Beschreibung) {
 
         Rezept2 rezept = new Rezept2();
-       Zutat.setLink(link);
-        Zutat.setrezeptid(rezeptid);
+
+     //  Rezept2.setBeschreibung(Beschreibung);
+       // Zutat.setrezeptid(rezeptid);
         DB.persist(rezeptid);
 
 
@@ -54,7 +55,7 @@ public class BackendFridgiGoApplication {
 
     //Gibt eine Liste aller Rezepte, die eine Zutat haben zurück
     @GetMapping(value = "/fridgigo/meineRezepte", produces = "application/json")
-    @CrossOrigin(origins = "http://localhost:8100")
+    @CrossOrigin(origins = "http://localhost:8081")
     public String viewAllRezepteString() {
         ArrayList<Rezept2> rezeptList = new ArrayList<>();
         ArrayList<Zutat> zutatList = DB.callAllZutat();

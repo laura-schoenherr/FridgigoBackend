@@ -37,7 +37,7 @@ public class DB {
         Session session = factory.openSession();
 
         session.beginTransaction();
-        ArrayList<Rezept2> entries = (ArrayList<Rezept>) session.createCriteria(Rezept.class).list();
+        ArrayList<Rezept2> entries = (ArrayList<Rezept2>) session.createCriteria(Rezept2.class).list();
         session.flush();
         return entries;
     }
@@ -56,23 +56,10 @@ public class DB {
         session.close();
     }
 
-    //Ruft ein Nutzerobjekt (Nutzerdaten) nach seinem Nutzernamen aus der Datenbank ab
-    public static User callUserByName(String input) {
-        StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure().build();
-
-        Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
-        SessionFactory factory = meta.getSessionFactoryBuilder().build();
-        Session session = factory.openSession();
-
-
-        session.beginTransaction();
-        User user = session.load(User.class, input);
-        session.flush();
-        return user;
-    }
+    
 
     //Ruft ein Kategorieobjekt nach seiner rezeptid aus der Datenbank ab
-    public static <KData> KData callkategorieById(Integer input) {
+    public static Zutat callkategorieById(Integer input) {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure().build();
 
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -81,11 +68,12 @@ public class DB {
 
 
         session.beginTransaction();
-        Zutat zutat = session.load(Zutat.class, input);
+        Zutat zutatid = session.load(Zutat.class, input);
         session.flush();
-        return zutat;
+        return zutatid;
     }
 
+  
     //Ruft eine Liste aller gespeicherten Zutaten aus der Datenbank ab
     public static ArrayList<Zutat> callAllZutat() {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure().build();
@@ -100,3 +88,6 @@ public class DB {
         return entries;
     }
 }
+
+
+  
