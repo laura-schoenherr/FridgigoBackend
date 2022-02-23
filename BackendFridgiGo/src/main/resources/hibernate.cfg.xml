@@ -4,18 +4,14 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
-        <property name="hibernate.connection.url">jdbc:mysql://planti-db-server.mysql.database.azure.com:3306/planti</property>
-        <property name="hibernate.connection.username">PlantiAdmin</property>
-        <property name="hibernate.connection.password">Hier einfügen</property>
+        <property name="hibernate.connection.url">jdbc:mariadb://nextbackenddb.mariadb.database.azure.com:3306</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"/>
         <property name="show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">validate</property>
-        <mapping class="com.example.BackendPlanti.Pflanze"/>
-        <mapping class="com.example.BackendPlanti.Sensor"/>
-        <mapping class="com.example.BackendPlanti.User"/>
+        <mapping class="com.example.BackendFridgigo.Rezept2"/>
+        <mapping class="com.example.BackendFridgigo.Zutat"/>
+        <mapping class="com.example.BackendFridgigo.KData"/>
     </session-factory>
 </hibernate-configuration>
 
-<!--
-planti-db-server.mysql.database.azure.com
--->
