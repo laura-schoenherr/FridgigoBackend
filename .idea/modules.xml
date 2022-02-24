@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BackendFridgiGo/BackendPlanti.iml" filepath="$PROJECT_DIR$/BackendFridgiGo/BackendPlanti.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BackendFridgiGo/BackendFrigiGo.iml" filepath="$PROJECT_DIR$/BackendFridgiGo/BackendFrigiGo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/FridgigoBackend.iml" filepath="$PROJECT_DIR$/.idea/FridgigoBackend.iml" />
     </modules>
   </component>
